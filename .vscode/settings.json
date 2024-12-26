@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/mooeyad/research_track/devel/lib/python3/dist-packages",
+        "/home/mooeyad/test_ws/devel/lib/python3/dist-packages",
+        "/home/mooeyad/gp_ws/devel/lib/python3/dist-packages",
+        "/home/mooeyad/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/mooeyad/research_track/devel/lib/python3/dist-packages",
+        "/home/mooeyad/test_ws/devel/lib/python3/dist-packages",
+        "/home/mooeyad/gp_ws/devel/lib/python3/dist-packages",
+        "/home/mooeyad/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}
