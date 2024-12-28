@@ -7,6 +7,7 @@ from nav_msgs.msg import Odometry
 from assignment_2_2024.msg import PlanningAction, PlanningGoal
 from geometry_msgs.msg import Twist
 from assignment2_rt.msg import RobotState
+from geometry_msgs.msg import Point
 
 robot_velocity = (0.0, 0.0)
 robot_position = (0.0, 0.0)
@@ -51,6 +52,8 @@ def main():
     """Main function for the action client."""
     rospy.init_node('action_client_node',anonymous=True)
     rospy.Subscriber('/odom', Odometry, odom_callback)
+    target_pub = rospy.Publisher('/last_target', Point, queue_size=10)
+
     #rate = rospy.Rate(10)
     
     # Action client setup
@@ -62,16 +65,23 @@ def main():
 
     while not rospy.is_shutdown():
         # Publish robot state
-        robot_state = RobotState()
-        robot_state.x, robot_state.y = robot_position
-        robot_state.vel_x, robot_state.vel_z = robot_velocity
-        pub.publish(robot_state)
-
+        #robot_state = RobotState()
+        #robot_state.x, robot_state.y = robot_position
+        #robot_state.vel_x, robot_state.vel_z = robot_velocity
+        #pub.publish(robot_state)
+        
         # Simple user interface for setting/canceling goals
         command = input("Enter 'set x y' to set goal or 'cancel' to cancel: ").strip()
         if command.startswith("set"):
             _, x, y = command.split()
             send_goal(client, float(x), float(y))
+            # Whenever a new target is set by the user, publish it
+            new_target = Point()
+            new_target.x = float(x)  
+            new_target.y = float(y)  
+            target_pub.publish(new_target)
+            #rospy.loginfo(f"Published new target: ({new_target.x}, {new_target.y})")
+            
             #client.wait_for_result()  # Wait for the result of the goal
             #check_goal_status(client)  # Check the goal status and result
         elif command == "cancel":
