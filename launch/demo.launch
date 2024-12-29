@@ -1,0 +1,10 @@
+<launch>
+    <!-- Launch the service node -->
+    <node name="service_node" pkg="assignment2_rt" type="service_node.py" output="screen" />
+
+    <!-- Launch the action client node -->
+    <node name="action_client_node" pkg="assignment2_rt" type="action_client.py" output="screen" launch-prefix="gnome-terminal -- bash -c 'rosrun assignment2_rt action_client.py; exec bash'" />
+
+    <!-- Launch the simulation -->
+    <include file="$(find assignment_2_2024)/launch/assignment1.launch" />
+</launch>
