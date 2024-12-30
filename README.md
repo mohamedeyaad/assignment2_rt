@@ -24,7 +24,7 @@ This ROS package, `assignment2_rt`, was developed as part of Assignment 2 for th
 - **Purpose**: Allows the user to set or cancel a target (x, y) and monitors the action server's feedback/status to determine when the target has been reached. It also publishes the robot's position and velocity.
 - **Features**:
     - Subscribes to the `/odom` topic to update the robot's position and velocity.
-    - Publishes the robot's state to the `/custom_msg` topic.
+    - Publishes the robot's state to the `/robot_state` topic.
     - Publishes the last target coordinates to the `/last_target` topic whenever a new goal is set.
     - Sends goals to the action server and monitors feedback/status to determine when the target has been reached.
     - Allows the user to cancel the current goal.
