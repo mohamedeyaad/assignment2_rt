@@ -2,12 +2,13 @@
 
 import rospy
 import actionlib
-from actionlib_msgs.msg import GoalStatus
 from nav_msgs.msg import Odometry
 from assignment_2_2024.msg import PlanningAction, PlanningGoal
 from geometry_msgs.msg import Twist
 from assignment2_rt.msg import RobotState
 from geometry_msgs.msg import Point
+import tkinter as tk
+from tkinter import messagebox
 
 robot_velocity = (0.0, 0.0)
 robot_position = (0.0, 0.0)
@@ -34,9 +35,29 @@ def feedback_callback(feedback):
     """Handle feedback from the action server."""
     rospy.loginfo(f"Feedback: {feedback}")
 
+def set_goal():
+    """Set goal from tkinter input."""
+    try:
+        x = float(goal_x_entry.get())
+        y = float(goal_y_entry.get())
+        send_goal(client, x, y)
+        new_target = Point()
+        new_target.x = x
+        new_target.y = y
+        target_pub.publish(new_target)
+        result_label.config(text=f"Goal set to ({x}, {y})", fg="green")
+    except ValueError:
+        result_label.config(text="Invalid input. Please enter valid numbers.", fg="red")
+
+def cancel_goal():
+    """Cancel the current goal."""
+    client.cancel_goal()
+    result_label.config(text="Goal canceled.", fg="red")
+
 def main():
     """Main function for the action client."""
-    rospy.init_node('action_client_node',anonymous=True)
+    global client, target_pub, goal_x_entry, goal_y_entry, result_label
+    rospy.init_node('action_client_node', anonymous=True)
     rospy.Subscriber('/odom', Odometry, odom_callback)
     target_pub = rospy.Publisher('/last_target', Point, queue_size=10)
     
@@ -46,23 +67,29 @@ def main():
     client.wait_for_server()
     rospy.loginfo("Connected to action server!")
     
-    while not rospy.is_shutdown():
-        # Simple user interface for setting/canceling goals
-        command = input("Enter 'set x y' to set goal or 'cancel' to cancel: ").strip()
-        if command.startswith("set"):
-            _, x, y = command.split()
-            send_goal(client, float(x), float(y))
-            # Whenever a new target is set by the user, publish it
-            new_target = Point()
-            new_target.x = float(x)  
-            new_target.y = float(y)  
-            target_pub.publish(new_target)
+    # Tkinter setup
+    root = tk.Tk()
+    root.title("Robot Goal Control")
+    root.geometry("500x280")
 
-        elif command == "cancel":
-            client.cancel_goal()
-            rospy.loginfo("Goal canceled.")
-        else:
-            rospy.logwarn("Unknown command.")
+    input_frame = tk.Frame(root)
+    input_frame.pack(pady=20)
+
+    tk.Label(input_frame, text="Enter X Goal:", font=("Arial", 12)).grid(row=0, column=0, padx=10, pady=5)
+    goal_x_entry = tk.Entry(input_frame, font=("Arial", 12))
+    goal_x_entry.grid(row=0, column=1, padx=10, pady=5)
+
+    tk.Label(input_frame, text="Enter Y Goal:", font=("Arial", 12)).grid(row=1, column=0, padx=10, pady=5)
+    goal_y_entry = tk.Entry(input_frame, font=("Arial", 12))
+    goal_y_entry.grid(row=1, column=1, padx=10, pady=5)
+
+    tk.Button(root, text="Set Goal", font=("Arial", 14), bg="#4CAF50", fg="white", command=set_goal).pack(pady=10)
+    tk.Button(root, text="Cancel Goal", font=("Arial", 14), bg="#FF5733", fg="white", command=cancel_goal).pack(pady=10)
+
+    result_label = tk.Label(root, text="", font=("Arial", 12))
+    result_label.pack(pady=10)
+
+    root.mainloop()
 
 if __name__ == "__main__":
     try:
