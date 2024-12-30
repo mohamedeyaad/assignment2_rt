@@ -13,8 +13,24 @@ This ROS package, `assignment2_rt`, was developed as part of Assignment 2 for th
 ## Nodes Description
 
 ### Service Node (`service_node`)
+- **Purpose**: Provides a service to retrieve the last target coordinates set by the action client.
+- **Features**:
+  - Subscribes to the `/last_target` topic to update the last target coordinates.
+  - Provides a service (`get_last_target`) to return the last target coordinates.
+- **Execution**: Implemented in Python (`service_node.py`).
+- **Launch**: Automatically launched using the provided launch file.
 
 ### Action Client Node (`action_client`)
+- **Purpose**: Allows the user to set or cancel a target (x, y) and monitors the action server's feedback/status to determine when the target has been reached. It also publishes the robot's position and velocity.
+- **Features**:
+    - Subscribes to the `/odom` topic to update the robot's position and velocity.
+    - Publishes the robot's state to the `/robot_state` topic.
+    - Publishes the last target coordinates to the `/last_target` topic whenever a new goal is set.
+    - Sends goals to the action server and monitors feedback/status to determine when the target has been reached.
+    - Allows the user to cancel the current goal.
+- **Execution**: Implemented in Python (`action_client.py`).
+- **Launch**: Automatically launched using the provided launch file.
+
 The `action_client` node includes a graphical user interface (GUI) for setting and canceling goals. Below is a screenshot of the GUI:
 
 ![Action Client GUI](images/action_client_gui.png)
