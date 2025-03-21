@@ -10,12 +10,27 @@ from geometry_msgs.msg import Point
 import tkinter as tk
 from tkinter import messagebox
 
+# Global variables
 robot_velocity = (0.0, 0.0)
+"""tuple: The current velocity of the robot (linear, angular)."""
+
 robot_position = (0.0, 0.0)
+"""tuple: The current position of the robot (x, y)."""
+
 pub = rospy.Publisher('/robot_state', RobotState, queue_size=10)
+"""rospy.Publisher: Publisher for the robot's state."""
 
 def odom_callback(msg):
-    """Callback to update robot position and velocity."""
+    """
+    Callback to update robot position and velocity.
+
+    This function is triggered whenever a new Odometry message is received.
+    It updates the global variables `robot_position` and `robot_velocity`
+    and publishes the robot's state.
+
+    :param msg: The Odometry message containing the robot's position and velocity.
+    :type msg: nav_msgs.msg.Odometry
+    """
     global robot_position, robot_velocity, pub
     robot_position = (msg.pose.pose.position.x, msg.pose.pose.position.y)
     robot_velocity = (msg.twist.twist.linear.x, msg.twist.twist.angular.z)
@@ -25,7 +40,19 @@ def odom_callback(msg):
     pub.publish(robot_data)
     
 def send_goal(client, x, y):
-    """Send a goal to the action server."""
+    """
+    Send a goal to the action server.
+
+    This function creates a `PlanningGoal` message with the specified
+    target position and sends it to the action server.
+
+    :param client: The action client used to send the goal.
+    :type client: actionlib.SimpleActionClient
+    :param x: The x-coordinate of the goal position.
+    :type x: float
+    :param y: The y-coordinate of the goal position.
+    :type y: float
+    """
     goal = PlanningGoal()
     goal.target_pose.pose.position.x = x
     goal.target_pose.pose.position.y = y
