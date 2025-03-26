@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to assignment2_rt’s documentation! &mdash; assignment2_rt 1.0 documentation</title>
+  <title>Welcome to assignment2_rt’s Documentation! &mdash; assignment2_rt 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
@@ -43,11 +43,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to assignment2_rt’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
-<li><a class="reference internal" href="#assignment2-rt-package-documentation">assignment2_rt package documentation!</a></li>
+<li><a class="reference internal" href="#">Welcome to assignment2_rt’s Documentation!</a></li>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#key-features">Key Features:</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and Tables</a></li>
+<li><a class="reference internal" href="#module-documentation">Module Documentation</a><ul>
 <li><a class="reference internal" href="#module-scripts.action_client">Action_client Module</a><ul>
 <li><a class="reference internal" href="#scripts.action_client.cancel_goal"><code class="docutils literal notranslate"><span class="pre">cancel_goal()</span></code></a></li>
 <li><a class="reference internal" href="#scripts.action_client.feedback_callback"><code class="docutils literal notranslate"><span class="pre">feedback_callback()</span></code></a></li>
@@ -60,6 +63,15 @@
 <li><a class="reference internal" href="#scripts.action_client.set_goal"><code class="docutils literal notranslate"><span class="pre">set_goal()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#module-scripts.service_node">Service_node Module</a><ul>
+<li><a class="reference internal" href="#scripts.service_node.handle_last_target_request"><code class="docutils literal notranslate"><span class="pre">handle_last_target_request()</span></code></a></li>
+<li><a class="reference internal" href="#scripts.service_node.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li><a class="reference internal" href="#scripts.service_node.target_callback"><code class="docutils literal notranslate"><span class="pre">target_callback()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
 </ul>
 </div>
         </div>
@@ -76,7 +88,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to assignment2_rt’s documentation!</li>
+      <li class="breadcrumb-item active">Welcome to assignment2_rt’s Documentation!</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,24 +99,42 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-assignment2-rt-s-documentation">
-<h1>Welcome to assignment2_rt’s documentation!<a class="headerlink" href="#welcome-to-assignment2-rt-s-documentation" title="Permalink to this heading"></a></h1>
+<h1>Welcome to assignment2_rt’s Documentation!<a class="headerlink" href="#welcome-to-assignment2-rt-s-documentation" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </section>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
+<p>Welcome to the <strong>assignment2_rt</strong> package documentation! This package is designed to control a robot, providing functionalities such as goal setting, odometry updates, and state publishing.</p>
+<p>This documentation will guide you through the modules, usage, and installation of the package.</p>
+<section id="key-features">
+<h2>Key Features:<a class="headerlink" href="#key-features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Odometry Updates</strong>: Tracks the robot’s position and velocity in real-time.</p></li>
+<li><p><strong>Goal Setting</strong>: Allows users to set navigation goals for the robot.</p></li>
+<li><p><strong>State Publishing</strong>: Publishes the robot’s state for monitoring.</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
+<p>To get started, refer to the following sections:
+- <strong>Installation Guide</strong>: Learn how to set up the package.
+- <strong>Usage Guide</strong>: Understand how to use the package’s features.</p>
+</section>
+</section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<h1>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-<section id="assignment2-rt-package-documentation">
-<h2>assignment2_rt package documentation!<a class="headerlink" href="#assignment2-rt-package-documentation" title="Permalink to this heading"></a></h2>
-<p>This is the documentation of the turtlebot_controller package!</p>
 </section>
-</section>
+<section id="module-documentation">
+<h1>Module Documentation<a class="headerlink" href="#module-documentation" title="Permalink to this heading"></a></h1>
+<p>Below is the detailed documentation for the modules in the <strong>assignment2_rt</strong> package.</p>
 <section id="module-scripts.action_client">
-<span id="action-client-module"></span><h1>Action_client Module<a class="headerlink" href="#module-scripts.action_client" title="Permalink to this heading"></a></h1>
+<span id="action-client-module"></span><h2>Action_client Module<a class="headerlink" href="#module-scripts.action_client" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="scripts.action_client.cancel_goal">
 <span class="sig-prename descclassname"><span class="pre">scripts.action_client.</span></span><span class="sig-name descname"><span class="pre">cancel_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/action_client.html#cancel_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.action_client.cancel_goal" title="Permalink to this definition"></a></dt>
@@ -193,6 +223,42 @@ target position and sends it to the action server.</p>
 <dd><p>Set goal from tkinter input.</p>
 </dd></dl>
 
+</section>
+<section id="module-scripts.service_node">
+<span id="service-node-module"></span><h2>Service_node Module<a class="headerlink" href="#module-scripts.service_node" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.service_node.handle_last_target_request">
+<span class="sig-prename descclassname"><span class="pre">scripts.service_node.</span></span><span class="sig-name descname"><span class="pre">handle_last_target_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/service_node.html#handle_last_target_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.service_node.handle_last_target_request" title="Permalink to this definition"></a></dt>
+<dd><p>Handle the service request and return the last target coordinates.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.service_node.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.service_node.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/service_node.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.service_node.main" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the service node.</p>
+<p>This function sets up the ROS node, subscribes to the <cite>/last_target</cite> topic,
+and advertises the <cite>get_last_target</cite> service.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.service_node.target_callback">
+<span class="sig-prename descclassname"><span class="pre">scripts.service_node.</span></span><span class="sig-name descname"><span class="pre">target_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/service_node.html#target_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.service_node.target_callback" title="Permalink to this definition"></a></dt>
+<dd><p>Callback function to update the last target from the subscribed topic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>geometry_msgs.msg.Point</em>) – The Point message containing the target coordinates.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="additional-resources">
+<h1>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>GitHub Repository</strong>: [assignment2_rt GitHub](<a class="reference external" href="https://github.com/mohamedeyaad/assignment2_rt">https://github.com/mohamedeyaad/assignment2_rt</a>)</p></li>
+<li><p><strong>Contact</strong>: For questions or issues, please contact [<a class="reference external" href="mailto:mooeyad&#37;&#52;&#48;gmail&#46;com">mooeyad<span>&#64;</span>gmail<span>&#46;</span>com</a>].</p></li>
+</ul>
 </section>
 
 
