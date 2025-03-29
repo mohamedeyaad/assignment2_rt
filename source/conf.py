@@ -34,7 +34,8 @@ extensions = [
     'sphinx.ext.githubpages', 
     "sphinx.ext.napoleon",
     'sphinx.ext.inheritance_diagram',
-    'breathe'
+    'breathe',
+    'sphinx_copybutton'
 ]
 
 templates_path = ['_templates']
@@ -50,3 +51,4 @@ source_suffix = '.rst'
 master_doc = 'index'
 html_theme ='sphinx_rtd_theme'
 html_static_path = ['_static']
+pygments_style = 'sphinx'

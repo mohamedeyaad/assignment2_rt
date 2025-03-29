@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage Guide &mdash; assignment2_rt 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation Guide" href="installation_guide.html" />
+    <link rel="prev" title="Welcome to assignment2_rt’s Documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            assignment2_rt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#launching-the-nodes">Launching the Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interacting-with-the-nodes">Interacting with the Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#service-node-service-node">Service Node (<cite>service_node</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-client-node-action-client">Action Client Node (<cite>action_client</cite>)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation_guide.html">Installation Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">assignment2_rt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Usage Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage_guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage-guide">
+<h1>Usage Guide<a class="headerlink" href="#usage-guide" title="Permalink to this heading"></a></h1>
+<p>This guide explains how to use the <cite>assignment2_rt</cite> package, focusing on launching the nodes and interacting with the provided functionalities.</p>
+<section id="launching-the-nodes">
+<h2>Launching the Nodes<a class="headerlink" href="#launching-the-nodes" title="Permalink to this heading"></a></h2>
+<p>To launch the <cite>service_node</cite> and <cite>action_client</cite> nodes along with the simulation, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch assignment2_rt demo.launch
+</pre></div>
+</div>
+<p>This will start the simulation environment, initialize the nodes, and set up the necessary topics and services.</p>
+</section>
+<section id="interacting-with-the-nodes">
+<h2>Interacting with the Nodes<a class="headerlink" href="#interacting-with-the-nodes" title="Permalink to this heading"></a></h2>
+<section id="service-node-service-node">
+<h3>Service Node (<cite>service_node</cite>)<a class="headerlink" href="#service-node-service-node" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p><strong>Purpose</strong>:
+Provides a service to retrieve the last target coordinates.</p></li>
+<li><p><strong>Service</strong>:
+Call the <cite>get_last_target</cite> service to retrieve the last target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosservice call /get_last_target
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="action-client-node-action-client">
+<h3>Action Client Node (<cite>action_client</cite>)<a class="headerlink" href="#action-client-node-action-client" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p><strong>Purpose</strong>:
+Allows users to set or cancel goals and monitors the robot’s state.</p></li>
+<li><p><strong>GUI</strong>:
+Use the graphical interface to set or cancel goals. Below is a screenshot of the GUI:</p>
+<a class="reference internal image-reference" href="_images/action_client_gui.png"><img alt="Action Client GUI" class="align-center" src="_images/action_client_gui.png" style="width: 600px;" /></a>
+</li>
+<li><p><strong>State Monitoring</strong>: Publishes the robot’s position and velocity to <cite>/robot_state</cite>.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Use <cite>roslaunch assignment2_rt demo.launch</cite> to start the simulation and nodes.</p></li>
+<li><p>Use <cite>rosservice call /get_last_target</cite> to retrieve the last target coordinates.</p></li>
+<li><p>Use the GUI provided by the <cite>action_client</cite> node to set or cancel goals.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to assignment2_rt’s Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation_guide.html" class="btn btn-neutral float-right" title="Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mohamed Eyad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

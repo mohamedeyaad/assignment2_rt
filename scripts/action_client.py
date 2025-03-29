@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
 
+"""
+Action Client Node for the assignment2_rt package.
+
+This node allows the user to set or cancel navigation goals for a robot. It communicates
+with an action server to send goals and monitor their status. Additionally, it publishes
+the robot's state (position and velocity) and the last target coordinates.
+
+Features:
+- Subscribes to the `/odom` topic to update the robot's position and velocity.
+- Publishes the robot's state to the `/robot_state` topic.
+- Publishes the last target coordinates to the `/last_target` topic.
+- Provides a GUI for setting and canceling goals.
+"""
+
 import rospy
 import actionlib
 from nav_msgs.msg import Odometry
@@ -38,7 +52,7 @@ def odom_callback(msg):
     robot_data.x, robot_data.y = robot_position
     robot_data.vel_x, robot_data.vel_z = robot_velocity
     pub.publish(robot_data)
-    
+
 def send_goal(client, x, y):
     """
     Send a goal to the action server.
@@ -56,14 +70,26 @@ def send_goal(client, x, y):
     goal = PlanningGoal()
     goal.target_pose.pose.position.x = x
     goal.target_pose.pose.position.y = y
-    client.send_goal(goal, feedback_cb=feedback_callback)
+    client.send_goal(goal)
 
 def feedback_callback(feedback):
-    """Handle feedback from the action server."""
+    """
+    Handle feedback from the action server.
+
+    :param feedback: Feedback data from the action server.
+    :type feedback: FeedbackMessage
+    """
     rospy.loginfo(f"Feedback: {feedback}")
 
 def set_goal():
-    """Set goal from tkinter input."""
+    """
+    Set a goal from tkinter input.
+
+    This function retrieves the x and y coordinates from tkinter input fields,
+    sends the goal to the action server, and publishes the target coordinates.
+
+    :raises ValueError: If the input values cannot be converted to float.
+    """
     try:
         x = float(goal_x_entry.get())
         y = float(goal_y_entry.get())
@@ -74,7 +100,7 @@ def set_goal():
         target_pub.publish(new_target)
         result_label.config(text=f"Goal set to ({x}, {y})", fg="green")
     except ValueError:
-        result_label.config(text="Invalid input. Please enter valid numbers.", fg="red")
+        result_label.config(text="Invalid input! Please enter numeric values.", fg="red")
 
 def cancel_goal():
     """Cancel the current goal."""

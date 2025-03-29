@@ -7,9 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to assignment2_rt’s Documentation! &mdash; assignment2_rt 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -17,9 +18,12 @@
       <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
       <script src="_static/doctools.js?v=888ff710"></script>
       <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage Guide" href="usage_guide.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,39 +45,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to assignment2_rt’s Documentation!</a></li>
-<li><a class="reference internal" href="#overview">Overview</a><ul>
-<li><a class="reference internal" href="#key-features">Key Features:</a></li>
-<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage_guide.html">Usage Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_guide.html">Installation Guide</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and Tables</a></li>
-<li><a class="reference internal" href="#module-documentation">Module Documentation</a><ul>
-<li><a class="reference internal" href="#module-scripts.action_client">Action_client Module</a><ul>
-<li><a class="reference internal" href="#scripts.action_client.cancel_goal"><code class="docutils literal notranslate"><span class="pre">cancel_goal()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.feedback_callback"><code class="docutils literal notranslate"><span class="pre">feedback_callback()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.odom_callback"><code class="docutils literal notranslate"><span class="pre">odom_callback()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.pub"><code class="docutils literal notranslate"><span class="pre">pub</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.robot_position"><code class="docutils literal notranslate"><span class="pre">robot_position</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.robot_velocity"><code class="docutils literal notranslate"><span class="pre">robot_velocity</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.send_goal"><code class="docutils literal notranslate"><span class="pre">send_goal()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.action_client.set_goal"><code class="docutils literal notranslate"><span class="pre">set_goal()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-scripts.service_node">Service_node Module</a><ul>
-<li><a class="reference internal" href="#scripts.service_node.handle_last_target_request"><code class="docutils literal notranslate"><span class="pre">handle_last_target_request()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.service_node.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-<li><a class="reference internal" href="#scripts.service_node.target_callback"><code class="docutils literal notranslate"><span class="pre">target_callback()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -101,6 +78,20 @@
   <section id="welcome-to-assignment2-rt-s-documentation">
 <h1>Welcome to assignment2_rt’s Documentation!<a class="headerlink" href="#welcome-to-assignment2-rt-s-documentation" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage_guide.html">Usage Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage_guide.html#launching-the-nodes">Launching the Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage_guide.html#interacting-with-the-nodes">Interacting with the Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage_guide.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation_guide.html">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation_guide.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_guide.html#installation-steps">Installation Steps</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 <section id="overview">
@@ -117,9 +108,11 @@
 </section>
 <section id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
-<p>To get started, refer to the following sections:
-- <strong>Installation Guide</strong>: Learn how to set up the package.
-- <strong>Usage Guide</strong>: Understand how to use the package’s features.</p>
+<p>To get started, refer to the following sections:</p>
+<ul class="simple">
+<li><p><strong>Installation Guide</strong>: Learn how to set up the package.</p></li>
+<li><p><strong>Usage Guide</strong>: Understand how to use the package’s features.</p></li>
+</ul>
 </section>
 </section>
 <section id="indices-and-tables">
@@ -135,6 +128,15 @@
 <p>Below is the detailed documentation for the modules in the <strong>assignment2_rt</strong> package.</p>
 <section id="module-scripts.action_client">
 <span id="action-client-module"></span><h2>Action_client Module<a class="headerlink" href="#module-scripts.action_client" title="Permalink to this heading"></a></h2>
+<p>Action Client Node for the assignment2_rt package.</p>
+<p>This node allows the user to set or cancel navigation goals for a robot. It communicates
+with an action server to send goals and monitor their status. Additionally, it publishes
+the robot’s state (position and velocity) and the last target coordinates.</p>
+<p>Features:
+- Subscribes to the <cite>/odom</cite> topic to update the robot’s position and velocity.
+- Publishes the robot’s state to the <cite>/robot_state</cite> topic.
+- Publishes the last target coordinates to the <cite>/last_target</cite> topic.
+- Provides a GUI for setting and canceling goals.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="scripts.action_client.cancel_goal">
 <span class="sig-prename descclassname"><span class="pre">scripts.action_client.</span></span><span class="sig-name descname"><span class="pre">cancel_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/action_client.html#cancel_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.action_client.cancel_goal" title="Permalink to this definition"></a></dt>
@@ -145,6 +147,11 @@
 <dt class="sig sig-object py" id="scripts.action_client.feedback_callback">
 <span class="sig-prename descclassname"><span class="pre">scripts.action_client.</span></span><span class="sig-name descname"><span class="pre">feedback_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feedback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/action_client.html#feedback_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.action_client.feedback_callback" title="Permalink to this definition"></a></dt>
 <dd><p>Handle feedback from the action server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feedback</strong> (<em>FeedbackMessage</em>) – Feedback data from the action server.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -220,16 +227,49 @@ target position and sends it to the action server.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="scripts.action_client.set_goal">
 <span class="sig-prename descclassname"><span class="pre">scripts.action_client.</span></span><span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/action_client.html#set_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.action_client.set_goal" title="Permalink to this definition"></a></dt>
-<dd><p>Set goal from tkinter input.</p>
+<dd><p>Set a goal from tkinter input.</p>
+<p>This function retrieves the x and y coordinates from tkinter input fields,
+sends the goal to the action server, and publishes the target coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the input values cannot be converted to float.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
 <section id="module-scripts.service_node">
 <span id="service-node-module"></span><h2>Service_node Module<a class="headerlink" href="#module-scripts.service_node" title="Permalink to this heading"></a></h2>
+<p>Service Node for the assignment2_rt package.</p>
+<p>This node provides a ROS service (<cite>get_last_target</cite>) to retrieve the last target coordinates
+set by the action client. It subscribes to the <cite>/last_target</cite> topic to update the target
+coordinates and responds to service requests with the most recent target.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="scripts.service_node.handle_last_target_request">
 <span class="sig-prename descclassname"><span class="pre">scripts.service_node.</span></span><span class="sig-name descname"><span class="pre">handle_last_target_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/service_node.html#handle_last_target_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.service_node.handle_last_target_request" title="Permalink to this definition"></a></dt>
 <dd><p>Handle the service request and return the last target coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req</strong> (<em>assignment2_rt.srv.LastTargetRequest</em>) – The service request (not used in this implementation).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The last target coordinates (x, y).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>assignment2_rt.srv.LastTargetResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scripts.service_node.last_target">
+<span class="sig-prename descclassname"><span class="pre">scripts.service_node.</span></span><span class="sig-name descname"><span class="pre">last_target</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scripts.service_node.last_target" title="Permalink to this definition"></a></dt>
+<dd><p>Stores the last target coordinates received from the <cite>/last_target</cite> topic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>geometry_msgs.msg.Point</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -237,7 +277,8 @@ target position and sends it to the action server.</p>
 <span class="sig-prename descclassname"><span class="pre">scripts.service_node.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/service_node.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.service_node.main" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize the service node.</p>
 <p>This function sets up the ROS node, subscribes to the <cite>/last_target</cite> topic,
-and advertises the <cite>get_last_target</cite> service.</p>
+and advertises the <cite>get_last_target</cite> service. It keeps the node running
+using <cite>rospy.spin()</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -264,7 +305,9 @@ and advertises the <cite>get_last_target</cite> service.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage_guide.html" class="btn btn-neutral float-right" title="Usage Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

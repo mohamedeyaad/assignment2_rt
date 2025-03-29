@@ -40,8 +40,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"></div>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage_guide.html">Usage Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation_guide.html">Installation Guide</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -69,16 +73,31 @@
   <h1>Source code for scripts.service_node</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python3</span>
 
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Service Node for the assignment2_rt package.</span>
+
+<span class="sd">This node provides a ROS service (`get_last_target`) to retrieve the last target coordinates</span>
+<span class="sd">set by the action client. It subscribes to the `/last_target` topic to update the target</span>
+<span class="sd">coordinates and responds to service requests with the most recent target.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
 <span class="kn">import</span> <span class="nn">rospy</span>
 <span class="kn">from</span> <span class="nn">assignment2_rt.srv</span> <span class="kn">import</span> <span class="n">LastTarget</span><span class="p">,</span> <span class="n">LastTargetResponse</span>
 <span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">Point</span>
 
 <span class="c1"># Global variable to store the last target</span>
 <span class="n">last_target</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="sd">&quot;&quot;&quot;geometry_msgs.msg.Point: Stores the last target coordinates received from the `/last_target` topic.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="handle_last_target_request"><a class="viewcode-back" href="../../index.html#scripts.service_node.handle_last_target_request">[docs]</a><span class="k">def</span> <span class="nf">handle_last_target_request</span><span class="p">(</span><span class="n">req</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Handle the service request and return the last target coordinates.&quot;&quot;&quot;</span>
-    <span class="c1">#global last_target</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle the service request and return the last target coordinates.</span>
+
+<span class="sd">    :param req: The service request (not used in this implementation).</span>
+<span class="sd">    :type req: assignment2_rt.srv.LastTargetRequest</span>
+<span class="sd">    :return: The last target coordinates (x, y).</span>
+<span class="sd">    :rtype: assignment2_rt.srv.LastTargetResponse</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">last_target</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">LastTargetResponse</span><span class="p">(</span><span class="n">last_target</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">last_target</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -101,7 +120,8 @@
 <span class="sd">    Initialize the service node.</span>
 
 <span class="sd">    This function sets up the ROS node, subscribes to the `/last_target` topic,</span>
-<span class="sd">    and advertises the `get_last_target` service.</span>
+<span class="sd">    and advertises the `get_last_target` service. It keeps the node running</span>
+<span class="sd">    using `rospy.spin()`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">global</span> <span class="n">last_target</span>
 
@@ -115,7 +135,7 @@
     <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Service node ready to handle requests.&quot;</span><span class="p">)</span>
 
     <span class="n">rospy</span><span class="o">.</span><span class="n">spin</span><span class="p">()</span></div>
-    
+
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">main</span><span class="p">()</span>
