@@ -13,7 +13,7 @@ Installation Steps
 
 .. code-block:: bash
 
-    git clone https://github.com/your-repo-link/assignment2_rt.git
+    git clone https://github.com/mohamedeyaad/assignment2_rt
 
 2. Build the package:
 

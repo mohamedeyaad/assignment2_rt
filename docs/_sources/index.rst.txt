@@ -11,14 +11,14 @@ Welcome to assignment2_rt's Documentation!
    :caption: Contents:
 
    modules
-   usage_guide
    installation_guide
+   usage_guide
 
 Overview
 ========
 Welcome to the **assignment2_rt** package documentation! This package is designed to control a robot, providing functionalities such as goal setting, odometry updates, and state publishing.
 
-This documentation will guide you through the modules, usage, and installation of the package.
+This documentation will guide you through the modules, installation, and usage of the package.
 
 Key Features:
 -------------
